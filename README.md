@@ -9,12 +9,7 @@ A standalone Node.js project for testing and exploring the AccessPlanIt API endp
    npm install
    ```
 
-2. Copy the environment file and add your credentials:
-   ```bash
-   cp .env.example .env
-   ```
-
-3. Edit `.env` and add your AccessPlanIt credentials:
+2. Create `.env` and add your AccessPlanIt credentials:
    ```
    ACCESS_PLANIT_USER=your_username
    ACCESS_PLANIT_PASS=your_password
@@ -34,25 +29,20 @@ Get actual course data (templates and dates):
 npm run fetch
 ```
 
-You can specify a limit for the number of records:
-```bash
-npm run fetch -- --limit 50
-```
-
 ### Run Individual Scripts
 ```bash
 # Help endpoints only
 node fetch-help-endpoints.js
 
 # Course data only
-node fetch-course-data.js --limit 20
+node fetch-course-data.js
 ```
 
 ## Output
 
 All fetched data is saved to the `output/` directory with timestamps:
-- `course-date-help-{timestamp}.json` - Course date API documentation
-- `course-template-help-{timestamp}.json` - Course template API documentation  
+- `course-date-help-{timestamp}.json` - Lists modules available to the course date endpoint
+- `course-template-help-{timestamp}.json` - Lists modules available to the course template endpoint  
 - `course-templates-{timestamp}.json` - Actual course template data
 - `course-dates-{timestamp}.json` - Actual course date data
 
@@ -66,11 +56,3 @@ The scripts connect to:
 - **Course Date Help**: `/apihelp/v2/modules/courseDate`
 - **Course Template Help**: `/apihelp/v2/modules/courseTemplate`
 
-## Features
-
-- ✅ Standalone - no Gatsby dependency
-- ✅ Timestamped output files
-- ✅ Error handling and logging
-- ✅ Configurable data limits
-- ✅ Environment variable support
-- ✅ Both help documentation and actual data fetching
