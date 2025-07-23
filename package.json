@@ -8,7 +8,8 @@
     "fetch": "node fetch-course-data.js",
     "fetch:small": "node fetch-course-data.js --limit 5",
     "fetch:large": "node fetch-course-data.js --limit 100",
-    "all": "npm run help && npm run fetch"
+    "all": "npm run help && npm run fetch",
+    "schedule": "node scheduler.js"
   },
   "keywords": ["accessplanit", "api", "testing", "shelter"],
   "author": "Shelter",
